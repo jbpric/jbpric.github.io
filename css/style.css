@@ -69,6 +69,19 @@
   .logo img {
     max-width: 250px;
   }
+  .logo2 {
+    max-width: 250px;
+    text-align: center;
+    padding-top: 0px; 
+    width: 100%;
+    margin: 0 auto;
+  }
+  .logo2 img {
+    max-width: 250px;
+   
+    text-align: center;
+    padding-top: 0px;
+  }
   
   nav ul.menu {
     list-style: none;
@@ -111,12 +124,15 @@
   }
 
   /*Secciones*/
-  #acerca2 {
+  #intro {
     background-color: #EAEAEA;
     padding: 50px 0;
     margin-top: 142px;
   }
  
+  #nosotros {
+    padding-top: 120px;
+ }
   
   .acerca2-grid {
     display: grid;
@@ -165,6 +181,13 @@
   .acerca2-column .text-b {
     color: white;
     font-weight: 200;
+    padding-top: 260px;
+    
+  }
+  .acerca2-column .text-a {
+    color: white;
+    font-weight: 200;
+    padding-top: 0px;
   }
   .centrar3 {
     margin:2px auto;
