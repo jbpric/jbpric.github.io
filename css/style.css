@@ -167,6 +167,11 @@
     padding-top: 120px;
     font-size: 6vw;
     color: rgb(59, 58, 58);
+    padding-left: 25px;
+  }
+  .acerca3-column img{
+    padding-top: 150px;
+    margin-left: 25px;
   }
   .guion {
     font-size: 4vw;
