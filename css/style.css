@@ -155,6 +155,32 @@
     width: 90%;
     
   }
+
+  .acerca3-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 40px;
+  }
+  
+  .acerca3-column h2 {
+    padding-top: 120px;
+    font-size: 6vw;
+    color: rgb(59, 58, 58);
+  }
+  .guion {
+    font-size: 4vw;
+    margin-left: 10px;
+  }
+  .acerca3-column h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: white;
+    width: 90%;
+    
+  }
+
+
   .misvis {
     display: grid;
     grid-template-columns: 1fr 1fr;
