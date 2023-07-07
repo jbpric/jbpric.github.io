@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 /****** GENERAL    **********/
 * {
     margin: 0;
@@ -13,6 +15,7 @@
     font-family: 'Ysabeau Infant', sans-serif;
     background-color: #EAEAEA;
     color: rgba(0, 0, 0, 0.945);
+    
   }
   
   .container {
@@ -20,6 +23,7 @@
     margin: 0 auto;
     padding: 15px;
     font-weight:600;
+    
   }
 
   
@@ -155,12 +159,104 @@
     width: 90%;
     
   }
+.gallery {
+  display: flex;
+  
+}
+
+#tit-gal {
+  margin-top: 145px;
+  font-family: 'Gochi Hand', cursive;
+  font-size: 3vw;
+  color: #2B2C32;
+  font-weight: 300;
+  padding: 25px;
+  
+}
+
+.main-image {
+  flex-basis: 1rem;
+}
+.main-image img {
+  width: 60rem;
+  height: auto;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.356);
+}
+.side-images {
+  flex-basis: 20rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.gallery-item {
+  flex-basis: 20rem;
+}
+
+.gallery-item img {
+  width: 80%;
+  height: auto;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.356);
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    flex-wrap: wrap;
+  }
+
+  .main-image,
+  .side-images {
+    flex-basis: 100%;
+  }
+}
+.gallery {
+  display: flex;
+}
+
+.main-image {
+  flex-basis: 70%;
+  padding: 30px;
+}
+
+.side-images {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item {
+  flex-basis: 90%;
+  margin-bottom: 10px; /* Agrega un margen inferior de 10px entre las imágenes */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    flex-wrap: wrap;
+  }
+
+  .main-image,
+  .side-images {
+    flex-basis: 100%;
+  }
+}
 
   .acerca3-grid {
-    display: grid;
+    /*display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 40px;
+    grid-gap: 40px;*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .acerca3-colum {
+    flex-basis: 20rem;
+    flex-grow: 1;
   }
   
   .acerca3-column h2 {
