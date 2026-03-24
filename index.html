@@ -1,153 +1,984 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JB PRIC, C.A.</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/slide.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB PRIC, C.A. | Refrigeración Industrial y Comercial</title>
+    <meta name="description" content="Expertos en refrigeración industrial, cavas cuarto y sistemas de frío en Latinoamérica. Soluciones para la industria cárnica y farmacéutica.">
+    
+    <!-- Fuentes y Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Michroma&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --primary-blue: #1e3a8a;
+            --electric-blue: #00d2ff;
+            --industrial-gray: #e5e7eb;
+            --text-light: #f9fafb;
+            --text-dark: #1f2937;
+            --accent-green: #10b981;
+            --transition: all 0.3s ease;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo-text {
+            font-family: 'Michroma', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Estilos para el nuevo Logo de Imagen */
+        .logo-img {
+            height: 80px; /* Altura ajustable según tu diseño */
+            width: auto;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.2);
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--electric-blue);
+        }
+
+        .cta-header {
+            background: var(--electric-blue);
+            color: var(--primary-dark);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+
+        .cta-header:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
+            url('/Img/Background.png') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 2.5rem;
+            color: var(--industrial-gray);
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--electric-blue);
+            color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-primary:hover { background: white; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+        /* --- Servicios --- */
+        .section-padding { padding: 5rem 10%; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--electric-blue);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-bottom: 4px solid var(--industrial-gray);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--electric-blue);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        /* --- Proyectos --- */
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--industrial-gray);
+            background: none;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 250px;
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 25, 47, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .project-item:hover .project-overlay { opacity: 1; }
+        .project-item:hover img { transform: scale(1.1); }
+
+        /* --- Asistente IA --- */
+        .ia-section {
+            background: var(--primary-dark);
+            color: white;
+            border-radius: 15px;
+            padding: 3rem;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .ia-info { flex: 1; min-width: 300px; }
+        .ia-chat {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .chat-display {
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+            padding-right: 10px;
+        }
+
+        .bot-msg {
+            background: var(--primary-blue);
+            padding: 10px 15px;
+            border-radius: 15px 15px 15px 0;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .user-msg {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 15px 15px 0 15px;
+            margin-bottom: 1rem;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .chat-input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input-group input {
+            flex: 1;
+            padding: 0.8rem;
+            border-radius: 4px;
+            border: none;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .chat-input-group button {
+            background: var(--electric-blue);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        /* --- Contacto --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 { margin-bottom: 1.5rem; }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--industrial-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--primary-blue);
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .contact-form .full-width { grid-column: span 2; }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--industrial-gray);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--primary-blue);
+        }
+
+        .submit-btn {
+            background: var(--primary-dark);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover { background: var(--primary-blue); }
+
+        /* --- WhatsApp Flotante --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 4rem 10% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+        .footer-links h4 { margin-bottom: 1.5rem; color: var(--electric-blue); }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { color: var(--industrial-gray); text-decoration: none; transition: var(--transition); }
+        .footer-links a:hover { color: white; padding-left: 5px; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--industrial-gray);
+        }
+
+        /* --- Animaciones --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 992px) {
+            .nav-menu { display: none; }
+            .menu-toggle { display: block; }
+            .contact-container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 600px) {
+            .contact-form { grid-template-columns: 1fr; }
+            .contact-form .full-width { grid-column: span 1; }
+            .hero-btns { flex-direction: column; width: 100%; }
+            .logo-img { height: 35px; }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">
-        <a href="index.html"><img src="img/03.png" width="250px" alt="JB PRIC, C.A."></a>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <!-- REEMPLAZAR 'logo-placeholder.png' CON LA URL O RUTA DE TU LOGO -->
+            <img src="/Img/LogoJB2.png" alt="Logo JB PRIC" class="logo-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968263.png'">
+            <span class="logo-text">JB PRIC, C.A.</span>
+        </a>
+        <p>J-40160812-4</p>
+        
+        <ul class="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <a href="#contacto" class="cta-header">Solicitar Cotización</a>
+        
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <h1>Soluciones Integrales en Refrigeración Industrial</h1>
+        <p>Diseño, fabricación e instalación de sistemas de frío de alta precisión para la industria cárnica, alimentaria y farmacéutica en toda Latinoamérica.</p>
+        <div class="hero-btns">
+            <a href="#contacto" class="btn-primary">Solicitar Presupuesto</a>
+            <a href="#proyectos" class="btn-secondary">Ver Proyectos</a>
+        </div>
+    </section>
+
+    <!-- SERVICIOS MODIFICADO -->
+<section class="section-padding" id="servicios">
+    <div class="section-title">
+        <h2>Nuestros Servicios Especializados</h2>
     </div>
-    <nav>
-      <ul class="menu">
-        <li><a href="#nosotros">JB PRIC, C.A.</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="portafolio.html">Portafolio</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-    
-  <section id="intro">
-      <div class="acerca2-grid">
-        <div class="acerca2-column">
-          <p class="guion">Realizamos tus</p>
-          <h2>POYECTOS</h2>
-          <p class="subtt">
-            diseñamos utilizando las herramientas de la Metodología BIM, modelados 3D 
-            perfectos nos ayudan a la detección de errores así como parametrizar los costos de 
-            fabricación y montaje....
-          </p>
-        </div>
-        <div class="acerca2-column">
-          <div class="slideshow-container">
-            <div class="slide fade">
-              <img src="/img/cava1.png" alt="Imagen 1" width="300" height="auto">
-            </div>
-            <div class="slide fade">
-              <img src="/img/galeria/gal1.jpg" alt="Imagen 1" width="300" height="auto">
-            </div>
-            <div class="slide fade">
-              <img src="/img/galeria/gal2.jpg" alt="Imagen 1" width="300" height="auto">
-            </div>
-          </div>
-        </div>
-    </section>
 
-    
-    <section id="nosotros" class="misvis">
-        <div class="acerca2-column">
-          <h3 >¿Quiénes somos?</h3>
-          <p class="text-a">Somos JB PRIC, C.A., una empresa especializada en proyectos de refrigeración industrial y comercial en el estado Lara, Venezuela. Nos dedicamos a ofrecer soluciones eficientes y confiables para la industria alimenticia y el almacenaje controlado.<br>
-          Nuestro compromiso es brindar a nuestros clientes productos y servicios de la más alta calidad, adaptados a sus necesidades específicas. Trabajamos de la mano con nuestros clientes, comprendiendo sus requisitos y ofreciendo soluciones personalizadas que optimicen sus procesos de refrigeración y almacenamiento.<br>
-          Nos destacamos por nuestra atención personalizada, el conocimiento técnico de nuestro equipo y nuestra experiencia en la industria. Valoramos la confianza que nuestros clientes depositan en nosotros y nos esforzamos por superar sus expectativas en cada proyecto.</p>
-        </div>
-        <div class="acerca2-column">
-           <p class="text-b">En JB PRIC, C.A., nos diferenciamos por nuestra pasión por la excelencia y la búsqueda constante de la innovación. Trabajamos con las últimas tecnologías y mejores prácticas de la industria para ofrecer soluciones eficientes, sostenibles y amigables con el medio ambiente.</p>
-           <div class="logo2"><img src="img/04.png" width="250px" alt="JB PRIC, C.A."></div>  
-          </div>  
-          <br>
-    </section>
+    <div class="services-grid">
 
-    <section class="two-column-section">
-      <div class="column">
-        <h3 id="tit-gal" class="gallery">Algunos trabajos...</h3>
-      </div>
+        <div class="service-card" onclick="openModal('cavas')">
+            <img src="Img/Background.png">
+            <h3>Diseño de Cavas Cuarto</h3>
+        </div>
 
-      <div class="column">
-        <img src="/img/galeria/nieve.svg" width="80" height="200" viewBox=" 0 200 200" >
-      </div>
-    </section>
-    
-    
-    <section class="gallery">
-      
-      <div class="main-image">
-        <img src="/img/cava3.png" alt="Imagen 1">
-      </div>
-      <div class="side-images">
-        <div class="gallery-item">
-          <img src="/img/galeria/cava1.png" alt="Imagen 2">
+        <div class="service-card" onclick="openModal('congelacion')">
+            <img src="Img/Background.png">
+            <h3>Sistemas de Congelación</h3>
         </div>
-        <div class="gallery-item">
-          <img src="/img/galeria/gal1.jpg" alt="Imagen 3">
+
+        <div class="service-card" onclick="openModal('puertas')">
+            <img src="Img/puertas.jpg">
+            <h3>Puertas Especiales</h3>
         </div>
-        <div class="gallery-item">
-          <img src="/img/galeria/gal2.jpg" alt="Imagen 4">
+
+        <div class="service-card" onclick="openModal('desposte')">
+            <img src="Img/desposte.jpg">
+            <h3>Salas de Desposte</h3>
         </div>
-      </div>
-    </section>
-    
-          
-          
+
+        <div class="service-card" onclick="openModal('inoxidable')">
+            <img src="Img/acero.jpg">
+            <h3>Acero Inoxidable</h3>
+        </div>
+
+        <div class="service-card" onclick="openModal('mantenimiento')">
+            <img src="Img/mantenimiento.jpg">
+            <h3>Mantenimiento</h3>
+        </div>
+
+        <div class="service-card" onclick="openModal('rieles')">
+            <img src="Img/rieles.jpg">
+            <h3>Sistemas de Rieles</h3>
+        </div>
+
+        <div class="service-card" onclick="openModal('revestimientos')">
+            <img src="Img/revestimiento.jpg">
+            <h3>Revestimientos</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-text"></p>
+    </div>
+</div>
+
+<style>
+/* AJUSTE SERVICIOS */
+.service-card {
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+}
+
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeInUp 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+</style>
+
+<script>
+function openModal(servicio) {
+    const title = document.getElementById("modal-title");
+    const text = document.getElementById("modal-text");
+
+    const data = {
+        cavas: {
+            title: "Diseño de Cavas Cuarto",
+            text: "Diseñamos cavas adaptadas a su producto, controlando temperatura, humedad y capacidad según sus necesidades industriales."
+        },
+        congelacion: {
+            title: "Sistemas de Congelación",
+            text: "Implementamos túneles de congelación rápida y sistemas industriales de alta eficiencia energética."
+        },
+        puertas: {
+            title: "Puertas Especiales",
+            text: "Fabricación de puertas industriales resistentes a ambientes extremos y alto tráfico."
+        },
+        desposte: {
+            title: "Salas de Desposte",
+            text: "Acondicionamos áreas de procesamiento bajo estrictas normas sanitarias y control térmico."
+        },
+        inoxidable: {
+            title: "Acero Inoxidable",
+            text: "Fabricación de estructuras, mobiliario y sistemas en acero inoxidable grado alimenticio."
+        },
+        mantenimiento: {
+            title: "Mantenimiento",
+            text: "Planes preventivos y correctivos para garantizar operación continua de sus sistemas."
+        },
+        rieles: {
+            title: "Sistemas de Rieles",
+            text: "Diseño e instalación de rieles para manejo eficiente de canales cárnicas."
+        },
+        revestimientos: {
+            title: "Revestimientos",
+            text: "Aplicación de láminas PVC sanitarias para mejorar higiene y durabilidad de espacios."
+        }
+    };
+
+    title.textContent = data[servicio].title;
+    text.textContent = data[servicio].text;
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+    <!-- Proyectos -->
+    <section class="section-padding" style="background: var(--industrial-gray);" id="proyectos">
+        <div class="section-title">
+            <h2>Casos de Éxito</h2>
         </div>
         
-      </div>
-    </div>
- 
-
-
-
-
-
-
-
-  <footer id="contac">
-    <div class="container_footer">
-      <div class="footer-column">
-        <div class="footer-logo">
-            <a href="index.html"><img src="img/04.png" width="250px" alt="JB PRIC, C.A."></a>
+        <div class="projects-filter">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Cavas Cuarto</button>
+            <button class="filter-btn">Cárnico</button>
+            <button class="filter-btn">Farmacia</button>
         </div>
-      </div>
-      <div class="footer-column">
-        <div class="contact-info">
-          <h3>Información de contacto</h3>
-          <p>Dirección: Calle 9 entre Carreras 2A y 3, San Francisco, Barquisimeto-Venezuela</p>
-          <p>Teléfono: +58-4126533201</p>
-          <p>Email: j.b.pric.lara@gmail.com</p>
+
+        <div class="projects-grid">
+            <div class="project-item">
+                <img src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&q=80&w=800" alt="Planta Cárnica">
+                <div class="project-overlay">
+                    <h4>Planta de Embutidos Premium</h4>
+                    <p>Instalación de sistema de rieles y cavas de maduración.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="https://images.unsplash.com/photo-1563213126-a4273aed9016?auto=format&fit=crop&q=80&w=800" alt="Laboratorio">
+                <div class="project-overlay">
+                    <h4>Centro Logístico Farma</h4>
+                    <p>Control estricto de temperatura para vacunas y medicamentos.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="https://images.unsplash.com/photo-1590244944867-0296ee9918bc?auto=format&fit=crop&q=80&w=800" alt="Cava Industrial">
+                <div class="project-overlay">
+                    <h4>Cava Cuarto Congelación</h4>
+                    <p>Diseño de 500m² para almacenamiento de aves.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="footer-column">
-        <div class="social-media">
-          <h3>Síguenos en redes sociales</h3>
+    </section>
 
-          <ul>
-            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.0726C24 5.44354 18.629 0.0725708 12 0.0725708C5.37097 0.0725708 0 5.44354 0 12.0726C0 18.0619 4.38823 23.0264 10.125 23.9274V15.5414H7.07661V12.0726H10.125V9.4287C10.125 6.42144 11.9153 4.76031 14.6574 4.76031C15.9706 4.76031 17.3439 4.99451 17.3439 4.99451V7.94612H15.8303C14.34 7.94612 13.875 8.87128 13.875 9.82015V12.0726H17.2031L16.6708 15.5414H13.875V23.9274C19.6118 23.0264 24 18.0619 24 12.0726Z" fill="currentColor"></path></svg>
-            </li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5331 7.11165C21.5483 7.32484 21.5483 7.53807 21.5483 7.75126C21.5483 14.2538 16.5991 21.7462 7.55333 21.7462C4.7665 21.7462 2.17768 20.9391 0 19.5381C0.395955 19.5838 0.776628 19.599 1.18782 19.599C3.48728 19.599 5.60407 18.8224 7.29444 17.4975C5.13199 17.4518 3.31979 16.0356 2.69542 14.0863C3.00001 14.132 3.30456 14.1624 3.62439 14.1624C4.066 14.1624 4.50766 14.1015 4.9188 13.9949C2.66499 13.538 0.974582 11.5584 0.974582 9.1675V9.10661C1.62938 9.47209 2.39087 9.70052 3.19792 9.73094C1.87304 8.84767 1.00505 7.34007 1.00505 5.63447C1.00505 4.72078 1.24866 3.88321 1.67508 3.15224C4.09642 6.13702 7.73605 8.08623 11.8172 8.29946C11.7411 7.93398 11.6954 7.55331 11.6954 7.17259C11.6954 4.46189 13.8883 2.25378 16.6142 2.25378C18.0304 2.25378 19.3096 2.84769 20.2081 3.80709C21.3198 3.5939 22.3858 3.18271 23.33 2.61927C22.9644 3.76143 22.1878 4.72082 21.1675 5.32992C22.1574 5.22337 23.1168 4.9492 24 4.56853C23.3301 5.54311 22.4924 6.4111 21.5331 7.11165Z" fill="currentColor"></path></svg>
-            </li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.0027 5.84808C8.59743 5.84808 5.85075 8.59477 5.85075 12C5.85075 15.4053 8.59743 18.1519 12.0027 18.1519C15.4079 18.1519 18.1546 15.4053 18.1546 12C18.1546 8.59477 15.4079 5.84808 12.0027 5.84808ZM12.0027 15.9996C9.80212 15.9996 8.00312 14.2059 8.00312 12C8.00312 9.7941 9.79677 8.00046 12.0027 8.00046C14.2086 8.00046 16.0022 9.7941 16.0022 12C16.0022 14.2059 14.2032 15.9996 12.0027 15.9996ZM19.8412 5.59644C19.8412 6.39421 19.1987 7.03135 18.4062 7.03135C17.6085 7.03135 16.9713 6.38885 16.9713 5.59644C16.9713 4.80402 17.6138 4.16153 18.4062 4.16153C19.1987 4.16153 19.8412 4.80402 19.8412 5.59644ZM23.9157 7.05277C23.8247 5.13063 23.3856 3.42801 21.9775 2.02522C20.5747 0.622429 18.8721 0.183388 16.9499 0.0870135C14.9689 -0.0254238 9.03112 -0.0254238 7.05008 0.0870135C5.1333 0.178034 3.43068 0.617075 2.02253 2.01986C0.614389 3.42265 0.180703 5.12527 0.0843279 7.04742C-0.0281093 9.02845 -0.0281093 14.9662 0.0843279 16.9472C0.175349 18.8694 0.614389 20.572 2.02253 21.9748C3.43068 23.3776 5.12794 23.8166 7.05008 23.913C9.03112 24.0254 14.9689 24.0254 16.9499 23.913C18.8721 23.822 20.5747 23.3829 21.9775 21.9748C23.3803 20.572 23.8193 18.8694 23.9157 16.9472C24.0281 14.9662 24.0281 9.03381 23.9157 7.05277ZM21.3564 19.0728C20.9388 20.1223 20.1303 20.9307 19.0755 21.3537C17.496 21.9802 13.7481 21.8356 12.0027 21.8356C10.2572 21.8356 6.50396 21.9748 4.92984 21.3537C3.88042 20.9361 3.07195 20.1276 2.64897 19.0728C2.02253 17.4934 2.16709 13.7455 2.16709 12C2.16709 10.2546 2.02789 6.50129 2.64897 4.92717C3.06659 3.87776 3.87507 3.06928 4.92984 2.6463C6.50931 2.01986 10.2572 2.16443 12.0027 2.16443C13.7481 2.16443 17.5014 2.02522 19.0755 2.6463C20.1249 3.06392 20.9334 3.8724 21.3564 4.92717C21.9828 6.50665 21.8383 10.2546 21.8383 12C21.8383 13.7455 21.9828 17.4987 21.3564 19.0728Z" fill="currentColor"></path></svg>
-            </li>
-
-          </ul>
+    <!-- Diferencial -->
+    <section class="section-padding">
+        <div class="section-title">
+            <h2>¿Por qué elegir JB PRIC?</h2>
         </div>
-      </div>
-    </div>
-  </footer>
-  
+        <div class="services-grid">
+            <div style="text-align: left; padding: 1rem;">
+                <div class="info-item"><i class="fas fa-check"></i> <strong>Experiencia técnica comprobada</strong></div>
+                <div class="info-item"><i class="fas fa-check"></i> <strong>Soluciones diseñadas a la medida</strong></div>
+                <div class="info-item"><i class="fas fa-check"></i> <strong>Equipos de alta eficiencia energética</strong></div>
+                <div class="info-item"><i class="fas fa-check"></i> <strong>Cumplimiento estricto de normativas ISO/COVENIN</strong></div>
+                <div class="info-item"><i class="fas fa-check"></i> <strong>Atención personalizada y soporte post-venta</strong></div>
+            </div>
+            <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" alt="Ingeniería" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
 
-  <script src="/js/script.js"></script>
+    <!-- Asistente IA -->
+    <section class="section-padding">
+        <div class="ia-section">
+            <div class="ia-info">
+                <h2>Asesor Virtual de Refrigeración</h2>
+                <p>¿No está seguro de qué tipo de sistema necesita? Nuestra herramienta inteligente le ayuda a pre-dimensionar su solución ideal en segundos.</p>
+                <ul style="margin-top: 2rem; list-style: none;">
+                    <li><i class="fas fa-robot"></i> Análisis de carga térmica</li>
+                    <li><i class="fas fa-microchip"></i> Recomendación de equipos</li>
+                    <li><i class="fas fa-clock"></i> Respuesta inmediata</li>
+                </ul>
+            </div>
+            <div class="ia-chat">
+                <div class="chat-display" id="chat-display">
+                    <div class="bot-msg">¡Hola! Soy el asistente de JB PRIC. Escribe qué producto deseas refrigerar y la cantidad (ej: "Necesito una cava para 10 toneladas de carne").</div>
+                </div>
+                <div class="chat-input-group">
+                    <input type="text" id="user-input" placeholder="Escribe tu consulta aquí...">
+                    <button onclick="handleChat()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="section-padding" id="nosotros">
+        <div class="section-title">
+            <h2>Sobre Nosotros</h2>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 1.1rem; color: #555;">
+                En JB PRIC, C.A., somos una empresa líder en Venezuela dedicada a transformar los desafíos de la refrigeración en soluciones eficientes y rentables. Con más de 20 años de trayectoria, nos hemos consolidado como el socio estratégico de las industrias que no pueden permitirse fallos en su cadena de frío. Nuestro compromiso es la excelencia en el diseño paramétrico utilizando Modelados 3D bajo Metodología BIM, la durabilidad de nuestros materiales y la innovación constante en cada proyecto de ingeniería.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section-padding" id="contacto" style="background: #f8f9fa;">
+        <div class="section-title">
+            <h2>Hablemos de su Proyecto</h2>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Ubicación</strong><br>
+                        Barquisimeto, Estado Lara-Venezuela.
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        j.b.pric.lara@gmail.com
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Teléfono</strong><br>
+                        +58 (424) 538-87-01
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Horario</strong><br>
+                        Lun - Vie: 8:00 AM - 5:00 PM
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="main-contact-form">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="text" placeholder="Empresa" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="tel" placeholder="Teléfono" required>
+                <textarea rows="5" placeholder="Cuéntenos sobre su necesidad (Dimensiones, temperatura, producto...)" class="full-width" required></textarea>
+                <button type="submit" class="submit-btn full-width">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/yournumber" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <a href="#" class="logo">
+                    <!-- LOGO EN EL FOOTER TAMBIÉN -->
+                    <img src="/Img/LogoJB2.png" alt="Logo JB PRIC" class="logo-img" style="height: 35px;" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968263.png'">
+                    <span class="logo-text" style="font-size: 1rem;">JB PRIC, C.A.</span>
+                </a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--industrial-gray);">Líderes en ingeniería térmica y refrigeración industrial.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Sectores</h4>
+                <ul>
+                    <li><a href="#">Industria Cárnica</a></li>
+                    <li><a href="#">Farmacéutica</a></li>
+                    <li><a href="#">Logística en Frío</a></li>
+                    <li><a href="#">Alimentos</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Redes</h4>
+                <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 JB PRIC, C.A. Todos los derechos reservados. Desarrollado con tecnología de vanguardia.
+        </div>
+    </footer>
+
+    <script>
+        // Manejo del Asistente Virtual
+        function handleChat() {
+            const input = document.getElementById('user-input');
+            const display = document.getElementById('chat-display');
+            const userText = input.value.trim().toLowerCase();
+
+            if (userText === "") return;
+
+            // Mostrar mensaje del usuario
+            const userDiv = document.createElement('div');
+            userDiv.className = 'user-msg';
+            userDiv.textContent = input.value;
+            display.appendChild(userDiv);
+            input.value = "";
+
+            // Simulación de respuesta IA
+            setTimeout(() => {
+                const botDiv = document.createElement('div');
+                botDiv.className = 'bot-msg';
+                
+                let response = "Entendido. Para esa solicitud, recomendamos un sistema de refrigeración con evaporadores de alto perfil. ¿Desea que un ingeniero le contacte para un cálculo exacto?";
+                
+                if (userText.includes("carne") || userText.includes("toneladas")) {
+                    response = "Para productos cárnicos, sugerimos una temperatura de conservación entre -1°C y 2°C. Para 5+ toneladas, requerirá una unidad condensadora de al menos 7.5 HP. ¿Le gustaría recibir un presupuesto formal?";
+                } else if (userText.includes("farma") || userText.includes("vacuna")) {
+                    response = "En el sector farmacéutico, instalamos sistemas con redundancia (Dual Cooling) para garantizar seguridad total. ¿Necesita control de humedad también?";
+                } else if (userText.includes("precio") || userText.includes("cuanto cuesta")) {
+                    response = "El costo depende de las dimensiones y el equipo. Por favor, deje sus datos en el formulario inferior para enviarle una cotización personalizada hoy mismo.";
+                }
+
+                botDiv.textContent = response;
+                display.appendChild(botDiv);
+                display.scrollTop = display.scrollHeight;
+            }, 800);
+        }
+
+        // Permitir Enter en el chat
+        document.getElementById('user-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') handleChat();
+        });
+
+        // Toggle del Menú Mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            if(navMenu.style.display === 'flex') {
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '70px';
+                navMenu.style.left = '0';
+                navMenu.style.width = '100%';
+                navMenu.style.background = 'var(--primary-dark)';
+                navMenu.style.padding = '2rem';
+                navMenu.style.textAlign = 'center';
+            }
+        });
+
+        // Smooth Scroll para todos los enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simulación de envío de formulario
+        document.getElementById('main-contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            btn.textContent = "ENVIANDO...";
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.textContent = "¡SOLICITUD ENVIADA!";
+                btn.style.background = "var(--accent-green)";
+                this.reset();
+                setTimeout(() => {
+                    btn.textContent = "ENVIAR SOLICITUD";
+                    btn.style.background = "var(--primary-dark)";
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
