@@ -90,7 +90,7 @@
                     Diseño, instalación y mantenimiento de cavas frigoríficas y túneles de congelación con tecnología de vanguardia.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#soluciones" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-blue-600 transition">
+                    <a href="#trabajos" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-blue-600 transition">
                         Ver Catálogo <i class="fa-solid fa-arrow-right"></i>
                     </a>
                     <a href="#ia" class="bg-white border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:border-blue-500 hover:text-blue-600 transition">
@@ -128,83 +128,270 @@
 
             <!-- Tab Selectors -->
             <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button onclick="switchTab('productos')" id="btn-productos" class="tab-btn active bg-blue-600 text-white px-8 py-3 rounded-xl font-bold transition shadow-lg">PRODUCTOS Y SERVICIOS</button>
-                <button onclick="switchTab('servicios')" id="btn-servicios" class="tab-btn bg-white text-slate-500 px-8 py-3 rounded-xl font-bold transition">OFICINA TÉCNICA</button>
-                <button onclick="switchTab('trabajos')" id="btn-trabajos" class="tab-btn bg-white text-slate-500 px-8 py-3 rounded-xl font-bold transition">TRABAJOS REALIZADOS</button>
+                
+                <button 
+                    onclick="switchTab('productos'); document.getElementById('productos').scrollIntoView({behavior: 'smooth', block: 'start'});" 
+                    id="btn-productos" 
+                    class="tab-btn active bg-blue-600 text-white px-8 py-3 rounded-xl font-bold transition shadow-lg" >
+                    PRODUCTOS
+                </button>
+
+                <button 
+                    onclick="switchTab('servicios'); document.getElementById('servicios').scrollIntoView({behavior: 'smooth', block: 'start'});" 
+                    id="btn-servicios" 
+                    class="tab-btn bg-white text-slate-500 px-8 py-3 rounded-xl font-bold transition hover:bg-blue-50">
+                    SERVICIOS
+                </button>
+
+                <button 
+                    onclick="switchTab('trabajos'); document.getElementById('trabajos').scrollIntoView({behavior: 'smooth', block: 'start'});" 
+                    id="btn-trabajos" 
+                    class="tab-btn bg-white text-slate-500 px-8 py-3 rounded-xl font-bold transition hover:bg-blue-50">
+                    TRABAJOS REALIZADOS
+                </button>
             </div>
             <br>
-
+            
             <!-- Contenidos -->
-            <h2 class="text-4xl font-black text-slate-700 mb-4">Productos y Servicios</h2>
-            <div id="productos" class="tab-content active grid md:grid-cols-3 gap-8">
-                
-                <div class="bg-white p-8 rounded-[32px] shadow-sm hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                        <i class="fa-solid fa-cube text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Cavas Frigoríficas</h3>
-                    <p class="text-slate-500 mb-4 text-sm">Paneles modulares de alta densidad para conservación y congelación industrial. Cálculo Paramétrico en Aislamiento y Cargas de Refrigeración</p>
-                    <img src="img/cava1.png" class="rounded-xl h-60 w-full object-cover mb-4" alt="Cavas">
+             <h2 id="productos" class="text-4xl font-black text-slate-900 mb-4" >Productos</h2>
+    <div class="tab-content active grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <!-- Tarjeta: Cavas Frigoríficas -->
+    <div class="group relative bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+        <div class="relative h-64 overflow-hidden">
+            <img src="img/cava1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Cavas">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-6 text-white">
+                <div class="flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-cube text-blue-400"></i>
+                    <span class="text-xs font-bold tracking-widest uppercase">Ingeniería de Frío</span>
                 </div>
-
-                <div class="bg-white p-8 rounded-[32px] shadow-sm hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                        <i class="fa-solid fa-wind text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Túneles IQF</h3>
-                    <p class="text-slate-500 mb-4 text-sm">Sistemas de congelación rápida para preservar la frescura total de alimentos. Sistemas Deflectores para Direccionamiento eficaz de la carga térmica</p>
-                    <img src="img/pollo.png" class="rounded-xl h-60 w-full object-cover mb-4" alt="Túneles">
-                </div>
-
-                <div class="bg-white p-8 rounded-[32px] shadow-sm hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                        <i class="fa-solid fa-snowflake text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Unidades de Frío</h3>
-                    <p class="text-slate-500 mb-4 text-sm">Compresores y evaporadores de alta eficiencia para cualquier capacidad.</p>
-                    <img src="img/mtto2.png" class="rounded-xl h-60 w-full object-cover mb-4" alt="Compresores">
-                </div>
-
-                <div class="bg-white p-8 rounded-[32px] shadow-sm hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                        <i class="fa-solid fa-layer-group text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Revestimientos</h3>
-                    <p class="text-slate-500 mb-4 text-sm">Revestimiento de Áreas Críticas para instalaciones industriales. Utilización de Láminas Machihembrada de PVC.</p>
-                    <img src="img/rev1.png" class="rounded-xl h-60 w-full object-cover mb-4" alt="Revestimiento">
-                </div>
-
-                <div class="bg-white p-8 rounded-[32px] shadow-sm hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                        <i class="fa-solid fa-shrimp text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Sistema de Rieles</h3>
-                    <p class="text-slate-500 mb-4 text-sm">Rieles Aéreos para Almacenamiento Refrigerado en Canal (Reses/Cerdos/Otros). Optimización de espacios según Normas Covenín.</p>
-                    <img src="img/riel02.png" class="rounded-xl h-60 w-full object-cover mb-4" alt="Rieles">
-                </div>
-
-                <div class="bg-white p-8 rounded-[32px] shadow-sm hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                        <i class="fa-solid fa-helmet-safety text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Acero Inoxidable</h3>
-                    <p class="text-slate-500 mb-4 text-sm">Trabajos especiales en Acero Inoxidable. Soldadura por personal Calificado.</p>
-                    <img src="img/acero.png" class="rounded-xl h-60 w-full object-cover mb-4" alt="Acero">
-                </div>
-
-                <div class="bg-white p-8 rounded-[32px] shadow-sm hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                        <i class="fa-brands fa-instalod text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Instalaciones</h3>
-                    <p class="text-slate-500 mb-4 text-sm">Instalaciones especializadas en refrigeración y almacenamiento, Paneles Laterales, Techos, Pisos Aislantes. Cerramientos Industriales, techos Tipo Deck, Otros.</p>
-                    <img src="img/Insta.png" class="rounded-xl h-60 w-full object-cover mb-4" alt="Acero">
-                </div>
-
-                <br>
+                <h3 class="text-2xl font-bold">Cavas Frigoríficas</h3>
             </div>
-            <h2 class="text-4xl font-black text-slate-900 mb-4">Oficina Técnica</h2>
-            <div id="servicios" class="tab-content grid md:grid-cols-2 gap-8">
+        </div>
+        <div class="p-8">
+            <p class="text-slate-500 text-sm mb-6">Paneles modulares de alta densidad (40kg/m³) para conservación y congelación industrial con acabado sanitario.</p>
+            <button onclick="abrirDetalle('cavas')" class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                Ver Especificaciones <i class="fa-solid fa-circle-info text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Túneles IQF -->
+    <div class="group relative bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+        <div class="relative h-64 overflow-hidden">
+            <img src="img/pollo.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Túneles">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-6 text-white">
+                <div class="flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-wind text-blue-400"></i>
+                    <span class="text-xs font-bold tracking-widest uppercase">Ultra Congelación</span>
+                </div>
+                <h3 class="text-2xl font-bold">Túneles IQF</h3>
+            </div>
+        </div>
+        <div class="p-8">
+            <p class="text-slate-500 text-sm mb-6">Sistemas de congelación rápida individual para preservar la frescura total de alimentos y evitar cristales de hielo.</p>
+            <button onclick="abrirDetalle('tuneles')" class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                Ver Especificaciones <i class="fa-solid fa-circle-info text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Unidades de Frío -->
+    <div class="group relative bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+        <div class="relative h-64 overflow-hidden">
+            <img src="img/mtto2.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Compresores">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-6 text-white">
+                <div class="flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-snowflake text-blue-400"></i>
+                    <span class="text-xs font-bold tracking-widest uppercase">Equipamiento Técnico</span>
+                </div>
+                <h3 class="text-2xl font-bold">Unidades de Frío</h3>
+            </div>
+        </div>
+        <div class="p-8">
+            <p class="text-slate-500 text-sm mb-6">Compresores semi-herméticos y evaporadores de alta eficiencia para cualquier capacidad y tipo de refrigerante.</p>
+            <button onclick="abrirDetalle('unidades')" class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                Ver Especificaciones <i class="fa-solid fa-circle-info text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Revestimientos -->
+    <div class="group relative bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+        <div class="relative h-64 overflow-hidden">
+            <img src="img/rev1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Revestimiento">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-6 text-white">
+                <div class="flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-layer-group text-blue-400"></i>
+                    <span class="text-xs font-bold tracking-widest uppercase">Áreas Críticas</span>
+                </div>
+                <h3 class="text-2xl font-bold">Revestimientos</h3>
+            </div>
+        </div>
+        <div class="p-8">
+            <p class="text-slate-500 text-sm mb-6">Instalación de paneles de fachada y techos aislantes para garantizar el control térmico en salas de procesamiento.</p>
+            <button onclick="abrirDetalle('revestimientos')" class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                Ver Especificaciones <i class="fa-solid fa-circle-info text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Sistema de Rieles -->
+    <div class="group relative bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+        <div class="relative h-64 overflow-hidden">
+            <img src="img/riel02.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Rieles">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-6 text-white">
+                <div class="flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-shrimp text-blue-400"></i>
+                    <span class="text-xs font-bold tracking-widest uppercase">Logística de Carga</span>
+                </div>
+                <h3 class="text-2xl font-bold">Sistema de Rieles</h3>
+            </div>
+        </div>
+        <div class="p-8">
+            <p class="text-slate-500 text-sm mb-6">Rieles aéreos en acero galvanizado o inoxidable para el transporte eficiente de canales cárnicas en plantas.</p>
+            <button onclick="abrirDetalle('rieles')" class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                Ver Especificaciones <i class="fa-solid fa-circle-info text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Acero Inoxidable -->
+    <div class="group relative bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+        <div class="relative h-64 overflow-hidden">
+            <img src="img/acero.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Acero">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-6 text-white">
+                <div class="flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-helmet-safety text-blue-400"></i>
+                    <span class="text-xs font-bold tracking-widest uppercase">Metalmecánica</span>
+                </div>
+                <h3 class="text-2xl font-bold">Acero Inoxidable</h3>
+            </div>
+        </div>
+        <div class="p-8">
+            <p class="text-slate-500 text-sm mb-6">Fabricación de mesones, tanques y estructuras especiales bajo normas sanitarias para la industria alimentaria.</p>
+            <button onclick="abrirDetalle('acero')" class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                Ver Especificaciones <i class="fa-solid fa-circle-info text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<h2 id="servicios" class="text-4xl font-black text-slate-900 mb-4 mt-[20px]">Oficina Técnica</h2>
+
+<!-- VENTANA MODAL PARA DETALLES (Aparece al hacer clic) -->
+<div id="modal-detalle" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+    <div class="bg-white w-full max-w-2xl rounded-[40px] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+        <div class="relative h-48 bg-blue-600 flex items-center justify-center text-white">
+            <button onclick="cerrarModal()" class="absolute top-6 right-6 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center">
+                <div id="modal-icon" class="text-5xl mb-3"></div>
+                <h3 id="modal-title" class="text-3xl font-black"></h3>
+            </div>
+        </div>
+        <div class="p-8 md:p-12">
+            <div id="modal-body" class="text-slate-600 leading-relaxed space-y-4 mb-8">
+                <!-- El contenido se carga dinámicamente -->
+            </div>
+            <div class="flex flex-col md:flex-row gap-4">
+                <button onclick="cerrarModal(); document.getElementById('contacto').scrollIntoView({behavior:'smooth'});" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-2xl hover:bg-blue-600 transition">
+                    SOLICITAR COTIZACIÓN
+                </button>
+                <button onclick="preguntarIA();" class="flex-1 bg-blue-50 text-blue-600 font-bold py-4 rounded-2xl hover:bg-blue-100 transition border border-blue-100 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-robot"></i> ASISTENCIA IA
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const infoProductos = {
+        cavas: {
+            titulo: "Cavas Frigoríficas",
+            icon: "<i class='fa-solid fa-cube'></i>",
+            texto: "Nuestras cavas industriales utilizan <b>paneles tipo sándwich</b> con núcleo de poliuretano de alta densidad. <br><br> • <b>Espesores:</b> 60mm a 150mm según rango térmico.<br> • <b>Acabados:</b> Acero galvanizado prepintado o acero inoxidable grado alimenticio.<br> • <b>Certificación:</b> Cumplimiento estricto de normas COVENIN e INSAL para manejo de alimentos."
+        },
+        tuneles: {
+            titulo: "Túneles de Congelación IQF",
+            icon: "<i class='fa-solid fa-wind'></i>",
+            texto: "Diseñados para la congelación ultra-rápida de productos individuales (Individual Quick Freezing). <br><br> • <b>Beneficio:</b> Evita la formación de macro-cristales de hielo, manteniendo la textura y jugosidad original.<br> • <b>Aplicación:</b> Pollo, camarones, frutas y hortalizas.<br> • <b>Capacidad:</b> Desde 250kg/h hasta líneas industriales continuas."
+        },
+        unidades: {
+            titulo: "Unidades de Frío",
+            icon: "<i class='fa-solid fa-snowflake'></i>",
+            texto: "Equipamiento de alto rendimiento energético para control de carga térmica.<br><br> • <b>Compresores:</b> Semi-herméticos (Copeland/Bitzer) con sistemas de protección.<br> • <b>Evaporadores:</b> De tiro forzado con deshielo eléctrico o por gas caliente.<br> • <b>Control:</b> Tableros electrónicos automatizados con monitoreo remoto opcional."
+        },
+        revestimientos: {
+            titulo: "Revestimientos Industriales",
+            icon: "<i class='fa-solid fa-layer-group'></i>",
+            texto: "Soluciones de aislamiento térmico para estructuras existentes y salas de proceso.<br><br> • <b>Fachadas:</b> Paneles arquitectónicos aislantes que reducen el consumo de A/A.<br> • <b>Techos:</b> Paneles trilaminares resistentes a la intemperie.<br> • <b>Higiene:</b> Superficies lisas, lavables y resistentes a agentes químicos de limpieza."
+        },
+        rieles: {
+            titulo: "Sistemas de Rieles",
+            icon: "<i class='fa-solid fa-shrimp'></i>",
+            texto: "Logística aérea para plantas de beneficio y desposte.<br><br> • <b>Material:</b> Acero galvanizado por inmersión en caliente o acero inoxidable.<br> • <b>Componentes:</b> Cambios de vía manuales/automáticos, balanzas aéreas integradas.<br> • <b>Diseño:</b> Optimización de flujo para evitar cuellos de botella en la producción."
+        },
+        acero: {
+            titulo: "Acero Inoxidable",
+            icon: "<i class='fa-solid fa-helmet-safety'></i>",
+            texto: "Fabricación metalmecánica especializada para ambientes sanitarios.<br><br> • <b>Productos:</b> Mesones de desposte, tanques de inmersión, estanterías para cavas.<br> • <b>Calidad:</b> Acero inoxidable 304 o 316L con soldaduras TIG pulidas a grado sanitario.<br> • <b>Diseño:</b> Equipos ergonómicos que facilitan la labor operativa."
+        }
+    };
+
+    function abrirDetalle(id) {
+        const item = infoProductos[id];
+        document.getElementById('modal-title').innerText = item.titulo;
+        document.getElementById('modal-icon').innerHTML = item.icon;
+        document.getElementById('modal-body').innerHTML = item.texto;
+        
+        const modal = document.getElementById('modal-detalle');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        
+        // Guardamos el ID para la consulta de la IA
+        modal.dataset.activeItem = item.titulo;
+    }
+
+    function cerrarModal() {
+        const modal = document.getElementById('modal-detalle');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    function preguntarIA() {
+        const itemTitle = document.getElementById('modal-detalle').dataset.activeItem;
+        cerrarModal();
+        const aiInput = document.getElementById('ai-input');
+        if(aiInput) {
+            aiInput.value = `Deseo un análisis técnico detallado para un proyecto de: ${itemTitle}`;
+            // Si tienes la función consultarIA definida globalmente, la llamamos
+            if(typeof consultarIA === 'function') consultarIA();
+            
+            // Scroll a la sección de IA para que el usuario vea la respuesta
+            document.getElementById('ai-input').scrollIntoView({behavior:'smooth'});
+        }
+    }
+
+    // Cerrar modal al hacer clic fuera del contenido
+    window.onclick = function(event) {
+        const modal = document.getElementById('modal-detalle');
+        if (event.target == modal) {
+            cerrarModal();
+        }
+    }
+</script>
+            <h2 id="servicios" class="text-4xl font-black text-slate-900 mb-4" >Oficina Técnica</h2>
+            <div  class="tab-content grid md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-[32px] flex gap-6 items-start">
                     <div class="bg-blue-100 text-blue-600 p-4 rounded-2xl"><i class="fa-solid fa-screwdriver-wrench text-2xl"></i></div>
                     <div>
@@ -221,8 +408,8 @@
                 </div>
             </div>
             <br>
-            <h2 class="text-4xl font-black text-slate-900 mb-4">Trabajos Realizados</h2>
-            <div id="trabajos" class="tab-content grid md:grid-cols-3 gap-6">
+            <h2 id="trabajos" class="text-4xl font-black text-slate-900 mb-4">Trabajos Realizados</h2>
+            <div  class="tab-content grid md:grid-cols-3 gap-6">
                 <!-- Tarjetas de trabajos realizados -->
                 <div class="relative group overflow-hidden rounded-2xl aspect-video">
                     <img src="img/deposte.png" class="w-full h-full object-cover">
@@ -411,7 +598,7 @@
                     
 
                     <button type="submit" class="w-full bg-slate-900 text-white font-bold py-5 rounded-2xl hover:bg-blue-600 transition-all shadow-xl flex items-center justify-center gap-3 group">
-                        ENVIAR SOLICITUD 
+                        ENVIAR REQUERIMIENTO TÉCNICO
                         <i class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition"></i>
                     </button>
                     
