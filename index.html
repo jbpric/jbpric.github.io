@@ -153,7 +153,7 @@
             <br>
             
             <!-- Contenidos -->
-    <h2 id="productos" class="text-4xl font-black text-slate-900 mb-4" >Productos</h2>
+             <h2 id="productos" class="text-4xl font-black text-slate-900 mb-4" >Productos</h2>
     <div class="tab-content active grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     
     <!-- Tarjeta: Cavas Frigoríficas -->
@@ -187,7 +187,7 @@
                     <i class="fa-solid fa-wind text-blue-400"></i>
                     <span class="text-xs font-bold tracking-widest uppercase">Ultra Congelación</span>
                 </div>
-                <h3 class="text-2xl font-bold">Cava "Túnel" de Congelación Rápida</h3>
+                <h3 class="text-2xl font-bold">Túneles IQF</h3>
             </div>
         </div>
         <div class="p-8">
@@ -281,11 +281,32 @@
             </button>
         </div>
     </div>
+
+    <!-- Tarjeta: Sistemas de AA/AA (HVAC) -->
+    <div class="group relative bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+        <div class="relative h-64 overflow-hidden">
+            <img src="img/hvac2.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Acero">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-6 text-white">
+                <div class="flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-snowman text-blue-400"></i>
+                    <span class="text-xs font-bold tracking-widest uppercase">HVAC</span>
+                </div>
+                <h3 class="text-2xl font-bold">Sistemas de AA/AA (HVAC)</h3>
+            </div>
+        </div>
+        <div class="p-8">
+            <p class="text-slate-500 text-sm mb-6">Ductos y sistemas de climatización para instalaciones industriales y comerciales.</p>
+            <button onclick="abrirDetalle('hvac')" class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                Ver Especificaciones <i class="fa-solid fa-circle-info text-xs"></i>
+            </button>
+        </div>
+    </div>
 <br>
 </div><br>
-<di id="servicios" >
-<h2 class="text-4xl font-black text-slate-900 mb-4 mt-[20px]">Oficina Técnica</h2>
-</div>
+
+<h2 id="servicios" class="text-4xl font-black text-slate-900 mb-4 mt-[20px]">Oficina Técnica</h2>
+
 <!-- VENTANA MODAL PARA DETALLES (Aparece al hacer clic) -->
 <div id="modal-detalle" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
     <div class="bg-white w-full max-w-2xl rounded-[40px] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
@@ -322,9 +343,9 @@
             texto: "Nuestras cavas industriales utilizan <b>paneles tipo sándwich</b> con núcleo de poliuretano de alta densidad. <br><br> • <b>Espesores:</b> 50mm a 150mm según rango térmico.<br> • <b>Acabados:</b> Lámina PVC, Fibra de Vidrio, Acero galvanizado prepintado o acero inoxidable grado alimenticio.<br> • <b>Certificación:</b> Cumplimiento estricto de normas COVENIN e INSAL para manejo de alimentos."
         },
         tuneles: {
-            titulo: "Cavas Túneles de Congelación Rápida",
+            titulo: "Túneles de Congelación IQF",
             icon: "<i class='fa-solid fa-wind'></i>",
-            texto: "Diseñados para la congelación ultra-rápida de productos que así lo ameriten. <br><br> • <b>Beneficio:</b> Evita la formación de macro-cristales de hielo, manteniendo la textura y jugosidad original.<br> • <b>Aplicación:</b> Pollo, camarones, frutas y hortalizas.<br> • <b>Capacidad:</b> Desde 250kg/h hasta líneas industriales continuas."
+            texto: "Diseñados para la congelación ultra-rápida de productos individuales (Individual Quick Freezing). <br><br> • <b>Beneficio:</b> Evita la formación de macro-cristales de hielo, manteniendo la textura y jugosidad original.<br> • <b>Aplicación:</b> Pollo, camarones, frutas y hortalizas.<br> • <b>Capacidad:</b> Desde 250kg/h hasta líneas industriales continuas."
         },
         unidades: {
             titulo: "Unidades de Frío",
@@ -345,6 +366,11 @@
             titulo: "Acero Inoxidable",
             icon: "<i class='fa-solid fa-helmet-safety'></i>",
             texto: "Fabricación metalmecánica especializada para ambientes sanitarios.<br><br> • <b>Productos:</b> Mesones de desposte, tanques de inmersión, estanterías para cavas.<br> • <b>Calidad:</b> Acero inoxidable 304 o 316L con soldaduras TIG pulidas a grado sanitario.<br> • <b>Diseño:</b> Equipos ergonómicos que facilitan la labor operativa."
+        },
+        hvac: {
+            titulo: "Sistemas de AA/AA (HVAC)",
+            icon: "<i class='fa-solid fa-helmet-safety'></i>",
+            texto: "Fabricación de ductos y sistemas de climatización.<br><br> • <b>Productos:</b> Ductos según la normativa.<br> • <b>Calidad:</b> Acero inoxidable, P3, Lámina Galvanizada .<br> • <b>Diseño:</b> Equipos y forma requerida (Circular, Rectacngular, Cuadrada, otra.)."
         }
     };
 
@@ -486,6 +512,14 @@
                     <div class="absolute inset-0 bg-blue-900/80 opacity-0 group-hover:opacity-100 transition p-6 flex flex-col justify-end text-white">
                         <p class="font-bold">Aislamiento Tuberías</p>
                         <p class="text-xs">Cliente: PROAGRO Bejuma</p>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl aspect-video">
+                    <img src="img/hvac.jpg" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-blue-900/80 opacity-0 group-hover:opacity-100 transition p-6 flex flex-col justify-end text-white">
+                        <p class="font-bold">Diseño Paramétrico de Sistema de Aire Acondicionado</p>
+                        <p class="text-xs">Cliente: Discoteca OASIS</p>
                     </div>
                 </div>
 
